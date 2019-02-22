@@ -1,0 +1,97 @@
+% 001000 IDENTIFICATION DIVISION.
+\documentclass[11pt]{article}
+
+
+% 002000 ENVIRONMENT DIVISION.
+\usepackage[T1]{fontenc}
+\usepackage{ae,aecompl}
+\usepackage[margin=1in]{geometry}
+\usepackage{microtype}
+\usepackage{hyperref}
+\usepackage{ifthen}
+\usepackage{parskip}
+
+\newcommand\question[2]{\item{\it #2}\vskip .5em}
+\newcommand\code[1]{\mbox{\texttt{#1}}}
+
+
+% 003000 DATA DIVISION.
+\title{CSCI 455 Project 1 Discussion}
+\author{Your Name}
+
+
+% 004000 PROCEDURE DIVISION.
+\begin{document}
+
+
+\maketitle
+
+
+\begin{enumerate}
+
+\question{3}{
+\label{q:init-criterion}
+Which criterion of the critical section problem is not satisfied by the initial
+implementation?  Explain.
+}
+
+% Answer here.
+
+\question{5}{
+Describe the cats-and-dogs synchronization problem in terms of the events that
+each pet must wait for.
+}
+
+% Answer here.
+
+\question{5}{
+Do you need to add another synchronization construct to the implementation to
+handle birds?  Explain.
+}
+
+% etc...
+
+\question{5}{
+Why would using a broadcast instead of signaling pets one at a time result in
+more useless wakeups than are necessary?
+}
+
+\question{7}{\label{q:last-proj}
+Meeting the \textit{bounded waiting} criterion for the critical-section
+problem was not required for this assignment, but it is possible that your
+solution does.  If your implementation satisfies it, explain why.  Otherwise,
+describe what additional variables or constructs that would be needed to
+implement it and when they would be updated.
+}
+
+\question{5}{
+The rules regarding the wolves provide an example of a classic synchronization
+problem (one of the ones mentioned in class).  Which problem is it?  What do the
+wolves correspond to and why?
+}
+
+\question{5}{
+This assignment initially used the term ``deadlock'' to refer to the situation
+where a pet is never woken up, even after the room empties.  Why specifically
+was this the wrong term to use?
+}
+
+\question{10}{
+Suppose the pet shop wants to give their pets more time to play.  They buy the
+office next door and create a separate shop identical to the first, with the
+same rules.  They want to be sure that both playrooms are being used as much
+as possible, so if the pets in Shop A are not currently playing, some pets
+will be brought from Shop B and vice versa.  Describe an analogous issue from
+the textbook's chapter on scheduling and how it would apply to the pet shop's
+logistics in this scenario.
+}
+
+\question{5}{\label{q:last-hw}
+If the two shops were connected instead, so that each pet could choose to wait
+for Playroom A or Playroom B, would it be possible to reach deadlock?
+Explain.
+}
+
+\end{enumerate}
+
+\end{document}
