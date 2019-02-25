@@ -1,0 +1,150 @@
+This is TeX, Version 3.14159265 (TeX Live 2018/Cygwin) (preloaded format=tex 2019.2.25)  25 FEB 2019 06:10
+**u
+(./report.tex
+! Undefined control sequence.
+l.2 \documentclass
+                  [11pt]{article}
+? }
+Type <return> to proceed, S to scroll future error messages,
+R to run without stopping, Q to run quietly,
+I to insert something, E to edit your file,
+1 or ... or 9 to ignore the next 1 to 9 tokens of input,
+H for help, X to quit.
+? 
+! Undefined control sequence.
+l.6 \usepackage
+               [T1]{fontenc}
+? 
+! Undefined control sequence.
+l.7 \usepackage
+               {ae,aecompl}
+? 
+! Undefined control sequence.
+l.8 \usepackage
+               [margin=1in]{geometry}
+? 
+! Undefined control sequence.
+l.9 \usepackage
+               {microtype}
+? 
+! Undefined control sequence.
+l.10 \usepackage
+                {hyperref}
+? 
+! Undefined control sequence.
+l.11 \usepackage
+                {ifthen}
+? 
+! Undefined control sequence.
+l.12 \usepackage
+                {parskip}
+? 
+! Undefined control sequence.
+l.14 \newcommand
+                \question[2]{\item{\it #2}\vskip .5em}
+? 
+! Undefined control sequence.
+l.14 \newcommand\question
+                         [2]{\item{\it #2}\vskip .5em}
+? 
+! You can't use `macro parameter character #' in restricted horizontal mode.
+<argument> \it ##
+                 2\enspace 
+\llap #1->\hbox to\z@ {\hss #1
+                              }
+\textindent #1->\indent \llap {#1\enspace }
+                                           \ignorespaces 
+l.14 \newcommand\question[2]{\item{\it #2}
+                                          \vskip .5em}
+? 
+! Undefined control sequence.
+l.15 \newcommand
+                \code[1]{\mbox{\texttt{#1}}}
+? 
+! Undefined control sequence.
+l.15 \newcommand\code
+                     [1]{\mbox{\texttt{#1}}}
+? 
+! Undefined control sequence.
+l.15 \newcommand\code[1]{\mbox
+                              {\texttt{#1}}}
+? 
+! Undefined control sequence.
+l.15 \newcommand\code[1]{\mbox{\texttt
+                                      {#1}}}
+? 
+! You can't use `macro parameter character #' in horizontal mode.
+l.15 \newcommand\code[1]{\mbox{\texttt{#
+                                        1}}}
+? 
+! Undefined control sequence.
+l.19 \title
+           {CSCI 455 Project 1 Discussion}
+? 
+! Undefined control sequence.
+l.20 \author
+            {Your Name}
+? 
+! Undefined control sequence.
+l.24 \begin
+           {document}
+? 
+! Undefined control sequence.
+l.27 \maketitle
+               
+? 
+! Undefined control sequence.
+l.30 \begin
+           {enumerate}
+? 
+! Undefined control sequence.
+l.32 \question
+              {3}{
+? 
+! Undefined control sequence.
+l.33 \label
+           {q:init-criterion}
+? 
+! Undefined control sequence.
+l.40 \question
+              {5}{
+? 
+! Undefined control sequence.
+l.47 \question
+              {5}{
+? 
+! Undefined control sequence.
+l.54 \question
+              {5}{
+? 
+! Undefined control sequence.
+l.61 \question
+              {7}{\label{q:last-proj}
+? 
+! Undefined control sequence.
+l.61 \question{7}{\label
+                        {q:last-proj}
+? 
+! Undefined control sequence.
+l.62 Meeting the \textit
+                        {bounded waiting} criterion for the critical-section
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   _
+l.69 ...y bounded waiting, which is why I set NUM_
+                                                  BIRDS and NUM_MICE to 1; o...
+
+? 
+! Emergency stop.
+<inserted text> 
+                $
+<to be read again> 
+                   _
+l.69 ...y bounded waiting, which is why I set NUM_
+                                                  BIRDS and NUM_MICE to 1; o...
+End of file on the terminal!
+
+No pages of output.

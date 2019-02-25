@@ -35,26 +35,28 @@ Which criterion of the critical section problem is not satisfied by the initial
 implementation?  Explain.
 }
 
-% Answer here.
+The ``mutual exclusion" criterion was not satisfied, since both cats and dogs ran in the playroom without regard to whether the other was or not. The room was being used freely, not exclusively.
 
 \question{5}{
 Describe the cats-and-dogs synchronization problem in terms of the events that
 each pet must wait for.
 }
 
-% Answer here.
+If there are any dogs in the room, a cat must wait until the last dog has left, before it can enter. Similarly, if any cat is in the room, a dog must wait for all the cats to leave.
 
 \question{5}{
 Do you need to add another synchronization construct to the implementation to
 handle birds?  Explain.
 }
 
-% etc...
+You don't strictly need to add a new synchronization construct. I did, by adding a condition variable refering to when the birds leave the room, but I later realized that is not the best option. Rather, the bird synchronization could use all the same constructs as the dog, seeing as they are interchangeable in this phase of the simulation. The birds and dogs can keep track of the same condition variables.
 
 \question{5}{
 Why would using a broadcast instead of signaling pets one at a time result in
 more useless wakeups than are necessary?
 }
+
+A broadcast will wake up all animals waiting on a single condition. If any animals are waiting on the same variable, but can't actually be in the room simultaneously, then some of them will be uselessly woken up. In my case, this was especially for the wolves, since many wolves might be waiting to get in the room, but when they all wake up, only one is allowed in.
 
 \question{7}{\label{q:last-proj}
 Meeting the \textit{bounded waiting} criterion for the critical-section
@@ -64,17 +66,23 @@ describe what additional variables or constructs that would be needed to
 implement it and when they would be updated.
 }
 
+My solution does not satisfy bounded waiting, which is why I set NUM_BIRDS and NUM_MICE to 1; otherwise, the chances of dogs, birds, and mice leaving the room at the same time are very low. In order to solve it, a sort of timeslice would be required so that every so often the animals in the room have to leave and let others in. I would set the timeslice to about 3 seconds, and every 3 seconds, every animal would have return to their cages, and the animal that has been waiting the longest will get woken up, while the animals who were removed end up at the back of the line (highest wait_time number).
+
 \question{5}{
 The rules regarding the wolves provide an example of a classic synchronization
 problem (one of the ones mentioned in class).  Which problem is it?  What do the
 wolves correspond to and why?
 }
 
+The wolves correspond to the writers in the Readers-Writers problem. Writers can only write to a file exclusively one at time, so they don't overwrite each other's work or change what another thread is in the process of reading, while wolves can only run in the room exclusively one at a time so they don't devour any other animal.
+
 \question{5}{
 This assignment initially used the term ``deadlock'' to refer to the situation
 where a pet is never woken up, even after the room empties.  Why specifically
 was this the wrong term to use?
 }
+
+Deadlock requires circular waiting (e.g. cats waiting for dogs, waitings for birds, waiting cats, etc.), which means that during deadlock, no opportunity arises for waking up a waiting thread. But if an animal is not woken up when it should be, that's just a bug.
 
 \question{10}{
 Suppose the pet shop wants to give their pets more time to play.  They buy the
@@ -86,11 +94,15 @@ the textbook's chapter on scheduling and how it would apply to the pet shop's
 logistics in this scenario.
 }
 
+This is similar to the issue of scheduling on multiple processors. It takes time to move animals from one location to another, just like it takes significant time to migrate processes between processors, and the processes may not share a cache. So an implementation of this would have to require some form of push and pull migration between shops.
+
 \question{5}{\label{q:last-hw}
 If the two shops were connected instead, so that each pet could choose to wait
 for Playroom A or Playroom B, would it be possible to reach deadlock?
 Explain.
 }
+
+There would still not be a possibility for deadlock in this instance because there's no circumstances in which an animal in a room needs to wait; nothing is stopping the animal from leaving when it wants to. However, deadlock requires the ``hold and wait'' property, meaning that acquiring one lock prompts the acquiring of another lock. The playrooms, though, can be left whenever.
 
 \end{enumerate}
 
